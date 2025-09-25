@@ -9,7 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get('/pcr', function () {
-    return 'Selamat Datang di Website Kampus PCR!';
+    return 'BELAJAR LARAVEL';
 });
 
 Route::get('/mahasiswa', function () {
