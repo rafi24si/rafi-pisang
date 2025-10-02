@@ -26,6 +26,7 @@
                     </li>
                     <li class="list-group-item">
                         <strong>No. HP:</strong> 081234567890
+                        
                     </li>
                 </ul>
             </div>
