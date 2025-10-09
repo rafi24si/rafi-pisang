@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'SI A';
+    src: url('assets/fonts/OpenSans.ttf');
+}
+
+.font-custom{
+    font-family: 'SI A';
+}
