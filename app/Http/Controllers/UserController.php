@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\User;
@@ -10,7 +9,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $data['dataUser'] = User::all();
+        $data['dataUser'] = User::paginate(10); // tampil 10 user per halaman
         return view('admin.user.index', $data);
     }
 
@@ -22,10 +21,10 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'  => 'required',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:6', // ➤ tambah
-            'profile_picture' => 'nullable|image|max:2048'
+            'name'            => 'required',
+            'email'           => 'required|email|unique:users,email',
+            'password'        => 'required|min:6', // ➤ tambah
+            'profile_picture' => 'nullable|image|max:2048',
         ]);
 
         $data = $request->only('name', 'email');
@@ -55,9 +54,9 @@ class UserController extends Controller
         $user = User::findOrFail($id);
 
         $request->validate([
-            'name'  => 'required',
-            'email' => 'required|email|unique:users,email,' . $id,
-            'profile_picture' => 'nullable|image|max:2048'
+            'name'            => 'required',
+            'email'           => 'required|email|unique:users,email,' . $id,
+            'profile_picture' => 'nullable|image|max:2048',
         ]);
 
         $data = $request->only('name', 'email');
