@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'IdooJeruk';
+    src: url('assets/fonts/OpenSans.ttf');
+}
+
+.font-idoo{
+    font-family: 'IdooJeruk';
+}
